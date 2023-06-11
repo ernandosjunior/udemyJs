@@ -49,3 +49,32 @@ function conta(operador, acumulador, ...numeros){ // rest operator deve ser o ul
 }
 
 conta("+", 0, 10,20,30,40,50,60) // o rest operator ... antes do parametro recebe todos os argumentos restantes.
+
+function criarMutiplicador(mutiplicador){
+    return function(n) {
+        return n * mutiplicador;
+    };
+};
+
+const duplica = criarMutiplicador(2);
+const triplica = criarMutiplicador(3);
+const quadriplica = criarMutiplicador(4);
+
+console.log("-------------retornando função-----------");
+console.log(duplica(2));
+console.log(triplica(2));
+console.log(quadriplica(2));
+
+console.log("-------------Escopo Léxico-----------");
+const nome = "Ernando"
+
+function falaNome() {
+    const nome = "Gustavo"
+    console.log(nome)
+}
+
+function usaFalaNome(){
+    const nome = "Thays"
+    falaNome()
+}
+usaFalaNome()
