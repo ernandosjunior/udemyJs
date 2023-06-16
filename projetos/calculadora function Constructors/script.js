@@ -45,7 +45,8 @@ function Calculadora(){
 
   this.fazerConta = function(){
     try {
-      this.display.value = eval(this.display.value)  
+      const conta = eval(this.display.value)
+      this.display.value = conta  
     } catch (error) {
       alert("conta invalida");
       console.log(error)
